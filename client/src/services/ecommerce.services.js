@@ -100,6 +100,17 @@ async getAllCarts() {
         }
     }
 
+    async logOut(user){
+        try{
+            const response = await axios.post('http://localhost:8000/api/users/logout', user)
+            console.log(response)
+            return response.data
+        }
+        catch(err){
+            return err;
+        }
+    }
+
 
 
 };

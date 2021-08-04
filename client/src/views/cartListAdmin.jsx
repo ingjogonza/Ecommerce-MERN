@@ -3,6 +3,7 @@ import EcommerceService from '../services/ecommerce.services'
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import Swal from 'sweetalert2';
 import { history, useHistory } from 'react-router-dom';
+import AdminNavigation from './AdminNavigation';
 const CartListAdmin = () => {
     let history = useHistory();
     const [variable, setvariable] = useState('');
@@ -86,8 +87,9 @@ const CartListAdmin = () => {
         
     },[])
     return (
-         
-            <div className="py-5 container">
+         <div className="container">
+             <AdminNavigation/>
+             <div className="py-5 container">
                 <h4 className="my-1">Pedidos</h4>
                 {cartList.length > 0 && cartList.map((item)=>(
                     <div className="card mb-3" key={item._id}>                 
@@ -159,6 +161,8 @@ const CartListAdmin = () => {
                 
 
             </div>
+         </div>
+            
             
             
     )

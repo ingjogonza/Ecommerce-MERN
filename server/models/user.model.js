@@ -26,6 +26,10 @@ const UserSchema = new mongoose.Schema({
     isadmin: {
         type: Boolean,
         default: false
+    },
+    isOnline: {
+        type: Boolean,
+        default: false
     }
     
 },

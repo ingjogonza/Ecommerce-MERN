@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import EcommerceService from '../services/ecommerce.services';
+import LogginOut from './LogginOut';
 
 const UserNavigation = () => {
     const {getItemFromLocalStorage} = useLocalStorage();
@@ -60,6 +61,9 @@ const UserNavigation = () => {
                                 {/* <p className="nav-link">Hola, {user.username}</p> */}
                                 <h6 className="nav-link">Hola, {user.username}</h6>
                                 
+                            </li>
+                            <li className="nav-item">
+                                <LogginOut user={user}/>  
                             </li>
                             
                         </ul>

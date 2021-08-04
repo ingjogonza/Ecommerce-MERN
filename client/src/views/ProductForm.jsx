@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams, useHistory } from 'react-router-dom';
 import ProductService from '../services/services.product';
 import Swal from 'sweetalert2';
+import AdminNavigation from './AdminNavigation';
 
 
 const ProductForm = () => {
@@ -90,6 +91,7 @@ const ProductForm = () => {
 
     return (
         <div className="container">
+            <AdminNavigation/>
             {/* <Navigation /> */}
             <div className="row justify-content">
                 <div className="col">

@@ -49,6 +49,7 @@ module.exports.loginUser = (req, res) => {
 }
 
 module.exports.logout = (req, res) => {
+  console.log(res);
   User.findOneAndUpdate({ email: req.body.email }, {isOnline: false}, {new: true})
   .then(response => {
     res.clearCookie('usertoken');

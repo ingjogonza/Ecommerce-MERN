@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import EcommerceService from '../services/ecommerce.services';
+import LogginOut from './LogginOut';
 
 const AdminNavigation = () => {
-    const {getItemFromLocalStorage} = useLocalStorage();
+    const {getItemFromLocalStorage, removeItemFromLocalStorage} = useLocalStorage();
     const idUser = getItemFromLocalStorage('idUser');
     const ecommerceService = new EcommerceService;
     const [isNavCollapsed, setIsNavCollapsed] = useState(true);
@@ -58,9 +59,12 @@ const AdminNavigation = () => {
                             </li>
                             <li className="nav-item">
                                 {/* <p className="nav-link">Hola, {user.username}</p> */}
-                                <h6 className="nav-link">Hola, {user.username}</h6>
-                                
+                                <h6 className="nav-link">Hola, {user.username}</h6>    
                             </li>
+                            <li className="nav-item">
+                                <LogginOut user={user}/>  
+                            </li>
+                            
                             
                         </ul>
                     </div>

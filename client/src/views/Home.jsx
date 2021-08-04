@@ -7,12 +7,12 @@ import AdminNavigation from './AdminNavigation';
 const Home = () => {
     const { getItemFromLocalStorage } = useLocalStorage();
     const isAdmin = getItemFromLocalStorage('isAdmin');
-    //console.log(isAdmin);
+    console.log(isAdmin);
     return (
         <div className="container">
-            {console.log(isAdmin)}
+            
 
-            {isAdmin === true ? (
+            {isAdmin ? (
                 <div className="container">
                     <AdminNavigation />
                     <div className="container px-lg-5">

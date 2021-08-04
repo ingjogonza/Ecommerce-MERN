@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ProductService from '../services/services.product';
 import { Link } from 'react-router-dom';
+import AdminNavigation from './AdminNavigation';
 
 const ProductListAdmin = () => {
     const [productList, setProductList] = useState([]);
@@ -31,6 +32,7 @@ const ProductListAdmin = () => {
     },[])
     return (
         <div className="container">
+            <AdminNavigation/>
             <h1>Listado de Productos</h1>
             <table className="table">
                 <thead>

@@ -13,8 +13,8 @@ axios.interceptors.response.use(function (response) {
 }, function (error) {
   // Do something with response error
   if(error.response.status === 401){
-    //console.log("Unauthorized Request");
-    window.location = '/';   
+    console.log("Unauthorized Request");
+    //window.location = '/';   
   }
   return Promise.reject(error);
 });
